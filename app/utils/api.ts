@@ -4,7 +4,7 @@ export const image_base_url: string = "https://image.tmdb.org/t/p/original/";
 const BASE_URL: string = "https://api.themoviedb.org/3/";
 
 const headers: { Authorization: string } = {
-  Authorization: process.env.themoviedb_api_token || "",
+  Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlM2Y5ZjAwMThkNmQxODZkYjZjMmY4N2FjYWU5MDlmYiIsIm5iZiI6MTcyMTY1NjYwOC4xMzYwOTYsInN1YiI6IjY1NGU1NDBkZDQ2NTM3MDEzODYwZDhjNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.98Gmh0a42SI8L8bY4yAlrXeWFOGYpOZ2doudIgFJ-fE",
 };
 
 export const getGeners = async () => {
