@@ -1,0 +1,59 @@
+@import url('./dark-light.css');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer components {
+  .container {
+    @apply px-4 lg:px-16 mx-auto w-full sm:w-[540px] md:w-[720px] lg:w-[960px] xl:w-[1140px] xxl:w-[1320px];
+  }
+}
+
+@layer utilities {
+  .text-main {
+    color: var(--text-main);
+  }
+  .main-bg {
+    background-color: var(--main-bg);
+  }
+  .backdropShadow {
+    background-image: linear-gradient(to right, var(--photoOverlayBackgroundColor));
+  }
+  .bannerShadow {
+    background-image: linear-gradient(to top, var(--bannerOverlayBackgroundColor));
+  }
+
+  .bg-pinkColor {
+    background-color: var(--pink);
+  }
+
+  .bg-orangeColor {
+    background-color: var(--orange);
+  }
+
+  .gradientBg {
+    background-image: var(--main-gradient);
+  }
+  .oneLine {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--pink);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(248, 248, 248);
+}
