@@ -4,7 +4,7 @@ export const image_base_url: string = "https://image.tmdb.org/t/p/original/";
 const BASE_URL: string = "https://api.themoviedb.org/3/";
 
 const headers: { Authorization: string } = {
-  Authorization: process.env.themoviedb_api_token || '',
+  Authorization: `Bearer ${process.env.themoviedb_api_token}`,
 };
 
 export const getGeners = async () => {
