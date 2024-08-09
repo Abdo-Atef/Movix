@@ -30,7 +30,7 @@ export default function DetailsBanner({
 
   return (
     <div
-      className={`${styles.banner} min-h-screen w-full bg-no-repeat bg-cover bg-center relative`}
+      className={`${styles.banner} mb-16 w-full bg-no-repeat bg-cover bg-center relative`}
       style={{
         backgroundImage: `url(${image_base_url}/${Details.backdrop_path})`,
       }}

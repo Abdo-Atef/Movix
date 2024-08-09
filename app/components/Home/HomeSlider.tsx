@@ -17,7 +17,7 @@ interface HomeSliderProps {
 
 export default function HomeSlider({ DATA, AllGeners }: HomeSliderProps) {
   return (
-    <Swiper className=" h-screen w-full max-sm:h-[600px] text-main" loop={true}>
+    <Swiper className=" h-[600px] w-full max-sm:h-[600px] text-main" loop={true}>
       {AllGeners && DATA?.length > 0 ? (
         <>
           {DATA?.map((movie: MovieItem) => (
