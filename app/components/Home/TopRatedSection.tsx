@@ -27,7 +27,7 @@ export default function TopRatedSection({
   return (
     <div className="container text-main mt-20">
       <div className="flex justify-between items-center">
-        <h2 className="my-10 text-2xl font-semibold">Popular</h2>
+        <h2 className="my-10 text-2xl font-semibold">Top Rated</h2>
         <div className="switchTabs bg-white text-black p-1 rounded-full shadow-md">
           <button
             onClick={() => handleTabChange("movie")}
