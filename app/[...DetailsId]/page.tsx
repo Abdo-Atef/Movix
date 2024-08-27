@@ -11,6 +11,17 @@ interface DetailsProps {
   };
 }
 
+export async function generateMetadata({ params }: DetailsProps) {
+  let id = params.DetailsId[1];
+  let type = params.DetailsId[0] === "movies" ? "movie" : "tv";
+
+  let data = await fetchDataFromApi(`${type}/${id}`);
+
+  return {
+    title: `${data.title || data.name}`,
+  };
+}
+
 export default async function Details({ params }: DetailsProps) {
   let id = params.DetailsId[1];
   let type = params.DetailsId[0] === "movies" ? "movie" : "tv";
@@ -23,18 +34,22 @@ export default async function Details({ params }: DetailsProps) {
   let recommendations = await fetchDataFromApi(`${type}/${id}/recommendations`);
   return (
     <div className="text-main min-h-[calc(100vh-65.8px)]">
-      {Details.success != false ? 
-      <>
-        <title>{Details.title || Details.name}</title>
-        <DetailsBanner Details={Details} credits={credits} />
-        <Cast credits={credits} />
-        <Videos videos={videos.results} />
-        <Similar DATA={similar.results} type={type} AllGeners={AllGeners}/>
-        <Recommendations DATA={recommendations.results} AllGeners={AllGeners}/>
-      </>
-      :
-      <h3 className="pt-56 container text-center text-2xl font-semibold">Not Found</h3>
-      }
+      {Details.success != false ? (
+        <>
+          <DetailsBanner Details={Details} credits={credits} />
+          <Cast credits={credits} />
+          <Videos videos={videos.results} />
+          <Similar DATA={similar.results} type={type} AllGeners={AllGeners} />
+          <Recommendations
+            DATA={recommendations.results}
+            AllGeners={AllGeners}
+          />
+        </>
+      ) : (
+        <h3 className="pt-56 container text-center text-2xl font-semibold">
+          Not Found
+        </h3>
+      )}
     </div>
   );
 }
