@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "dayjs": "^1.11.12",
-    "next": "14.2.5",
+    "next": "14.2.35",
     "nextjs-toploader": "^1.6.12",
     "query-string": "^9.1.0",
     "react": "^18",
